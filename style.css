@@ -1,0 +1,307 @@
+:root {
+  --bg: #eaf0f8;
+  --card-bg: #f7fbfe;
+  --accent: #4c86c6;
+  --accent-dark: #2f6bb0;
+  --muted: #9fb6d6;
+  --text: #0f2540;
+  --soft-shadow: 0 12px 22px rgba(17, 44, 81, 0.06);
+  --inner-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --radius: 18px;
+  --card-width: 750px;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #edf4fb 0%, var(--bg) 100%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+/* Card */
+.card {
+  width: var(--card-width);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95),
+    var(--card-bg)
+  );
+  border-radius: calc(var(--radius) + 6px);
+  padding: 38px 56px 48px 56px;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(76, 134, 198, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.title {
+  margin: 0 0 18px 0;
+  font-weight: 600;
+  font-size: 36px;
+  letter-spacing: 0.2px;
+  color: var(--accent-dark);
+}
+
+/* Mic area */
+.mic-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.mic-btn {
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f0f6fc 0%, #d9e7f5 100%);
+  border: 3px solid rgba(76, 134, 198, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(28, 72, 129, 0.06),
+    inset 0 -4px 10px rgba(76, 134, 198, 0.03);
+  color: var(--accent);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  border: none;
+}
+.mic-btn i {
+  font-size: 44px;
+  line-height: 1;
+}
+.mic-btn:active {
+  transform: translateY(1px) scale(0.995);
+  box-shadow: 0 6px 14px rgba(28, 72, 129, 0.08);
+}
+
+/* Timer */
+.timer {
+  font-weight: 600;
+  color: var(--accent-dark);
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+/* Transcript box */
+.transcript-wrapper {
+  width: 100%;
+  margin-top: 8px;
+  position: relative;
+}
+.transcript {
+  width: 100%;
+  resize: none;
+  border-radius: 18px;
+  padding: 28px 24px 44px 24px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text);
+  border: 1px solid rgba(76, 134, 198, 0.12);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(245, 251, 255, 0.85)
+  );
+  box-shadow: var(--inner-shadow);
+  min-height: 160px;
+  outline: none;
+}
+.transcript::placeholder {
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* Action icons inside transcript */
+.transcript-actions {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.icon-btn {
+  pointer-events: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-dark);
+  transition: background 0.12s ease, transform 0.08s ease, color 0.12s ease;
+}
+.icon-btn i {
+  font-size: 22px;
+  line-height: 1;
+}
+.icon-btn:focus {
+  outline: 2px solid rgba(76, 134, 198, 0.18);
+  outline-offset: 2px;
+}
+.icon-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(76, 134, 198, 0.03);
+  color: var(--accent);
+}
+
+/* Save button area */
+.footer-actions {
+  margin-top: 28px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.save-btn {
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    var(--accent-dark) 100%
+  );
+  color: white;
+  padding: 12px 48px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(46, 88, 150, 0.15);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+}
+.save-btn i {
+  font-size: 16px;
+}
+.save-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 12px rgba(46, 88, 150, 0.12);
+}
+/* Notes list*/
+.notes-panel {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.toggle-notes-btn {
+  background: transparent;
+  border: 1px solid rgba(76, 134, 198, 0.12);
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--accent-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.notes-list {
+  width: 100%;
+  max-height: 260px;
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(76, 134, 198, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(245, 251, 255, 0.95)
+  );
+  padding: 12px;
+  box-shadow: var(--inner-shadow);
+}
+.note-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(76, 134, 198, 0.04);
+  margin-bottom: 8px;
+  background: white;
+}
+.note-text {
+  flex: 1 1 auto;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.3;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.note-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.note-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: 12px;
+}
+.note-delete {
+  background: transparent;
+  border: 1px solid rgba(255, 80, 80, 0.12);
+  color: #b33;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.notes-empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 8px 0;
+}
+
+@media (max-width: 760px) {
+  .card {
+    width: 90%;
+    padding: 28px;
+    border-radius: 16px;
+  }
+  .mic-btn {
+    width: 78px;
+    height: 78px;
+  }
+  .mic-btn i {
+    font-size: 34px;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .transcript {
+    font-size: 16px;
+    padding: 20px;
+    min-height: 140px;
+  }
+  .save-btn {
+    padding: 10px 36px;
+    font-size: 16px;
+  }
+}

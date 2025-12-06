@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Speech to Text</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1 class="title">Speech to Text</h1>
+
+        <div class="mic-area">
+          <button id="micBtn" class="mic-btn">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+          <div id="timerDisplay" class="timer">00:00:00</div>
+        </div>
+
+        <div class="transcript-wrapper">
+          <textarea
+            id="transcriptBox"
+            class="transcript"
+            rows="6"
+            placeholder="Click the mic to start speaking..."
+          ></textarea>
+
+          <div class="transcript-actions">
+            <button id="copyBtn" class="icon-btn">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+            <button id="deleteBtn" class="icon-btn">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-actions">
+          <button id="saveBtn" class="save-btn">
+            <i class="fa-solid fa-floppy-disk" style="margin-right: 8px"></i>
+            Save
+          </button>
+        </div>
+        <!-- Saved notes-->
+        <div class="notes-panel">
+          <button id="toggleNotesBtn" class="toggle-notes-btn">
+            Show saved notes
+          </button>
+
+          <div id="notesList" class="notes-list" hidden>
+            <p class="notes-empty">No saved notes yet.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
